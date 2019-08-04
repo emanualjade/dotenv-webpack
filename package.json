@@ -4,17 +4,14 @@
   "version": "0.0.0-semantically-released",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run lint",
     "prepush": "npm t",
-    "lint": "standard",
     "predoc": "rimraf docs",
     "doc": "esdoc -c config/doc.json",
     "pretest": "npm run build",
     "test": "nyc _mocha --require @babel/register",
     "posttest": "nyc report --reporter=lcov",
-    "prebuild": "rimraf dist",
     "build": "babel --copy-files --out-dir dist src",
-    "travis": "npm run lint && npm t"
+    "travis": "npm t"
   },
   "repository": {
     "type": "git",
